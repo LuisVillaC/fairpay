@@ -1,0 +1,27 @@
+{
+  "name": "fairpay",
+  "version": "1.0.0",
+  "description": "FairPay monorepo",
+  "main": "index.js",
+  "author": "LuisV",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "frontend"
+  ],
+  "scripts": {
+    "build": "yarn workspace frontend build",
+    "dev": "yarn workspace frontend start",
+    "lint": "yarn workspace frontend eslint --ext .ts --max-warnings=0 .",
+    "deploy": "yarn build",
+    "relocate": "yarn workspace frontend build && rm -rf ./backend/build && mv -f frontend/build ./backend/",
+    "commit": "cz",
+    "lint:fix": "turbo run lint -- --fix",
+    "prepare": "husky install",
+    "test": "turbo run test",
+    "type-check": "turbo run type-check"
+  },
+  "devDependencies": {
+    "husky": "^8.0.3"
+  }
+}
