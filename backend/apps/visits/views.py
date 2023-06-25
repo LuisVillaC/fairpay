@@ -8,7 +8,6 @@ from .serializers import VisitSerializer
 from rest_framework.decorators import action
 
 
-# Create your views here.
 class VisitViewSet(mixins.DestroyModelMixin, mixins.ListModelMixin, viewsets.GenericViewSet):
     """
     Visit endpoints
@@ -37,3 +36,18 @@ class VisitViewSet(mixins.DestroyModelMixin, mixins.ListModelMixin, viewsets.Gen
 
         serializer = VisitSerializer(visits, many=True)
         return Response(serializer.data)
+
+    @action(
+        detail=False,
+        methods=['delete'],
+        url_path='delete-visit-by-dates'
+    )
+    def delete_visit_by_dates(self, request, *args, **kwargs):
+        start_date = request.GET.get('start_date')
+        end_date = request.GET.get('end_date')
+        visits_to_be_deleted = Visit.objects.filter(
+            created_at__range=[start_date, end_date],
+            status="finished"
+        )
+        visits_to_be_deleted.delete()
+        return Response(status=200)
