@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'apps.waiters.apps.WaitersConfig',
     'apps.products.apps.ProductsConfig',
+    'apps.tables.apps.TablesConfig',
+    'apps.visits.apps.VisitsConfig',
 ]
 
 MIDDLEWARE = [
