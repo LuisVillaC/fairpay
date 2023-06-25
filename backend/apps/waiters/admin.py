@@ -1,3 +1,5 @@
 from django.contrib import admin
+from apps.waiters.models import Waiter
 
-# Register your models here.
+
+admin.site.register(Waiter)
