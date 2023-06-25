@@ -1,0 +1,40 @@
+- model: tables.Table
+  pk: 1
+  fields:
+    alias: "Single table 1"
+    status: "available"
+    default_client_capacity: "2"
+    created_at: "2023-06-25 10:00"
+    updated_at: "2023-06-25 10:00"
+- model: tables.Table
+  pk: 2
+  fields:
+    alias: "Single table 2"
+    status: "available"
+    default_client_capacity: "2"
+    created_at: "2023-06-25 10:00"
+    updated_at: "2023-06-25 10:00"
+- model: tables.Table
+  pk: 3
+  fields:
+    alias: "Double table 1"
+    status: "available"
+    default_client_capacity: "4"
+    created_at: "2023-06-25 10:00"
+    updated_at: "2023-06-25 10:00"
+- model: tables.Table
+  pk: 4
+  fields:
+    alias: "Double table 2"
+    status: "available"
+    default_client_capacity: "4"
+    created_at: "2023-06-25 10:00"
+    updated_at: "2023-06-25 10:00"
+- model: tables.Table
+  pk: 5
+  fields:
+    alias: "Special table 1"
+    status: "available"
+    default_client_capacity: "8"
+    created_at: "2023-06-25 10:00"
+    updated_at: "2023-06-25 10:00"
