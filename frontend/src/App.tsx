@@ -1,12 +1,15 @@
 import { ApolloProvider } from "@apollo/client";
 import { RouterProvider } from "react-router-dom";
 import appRoutes from "./Routes";
+import DashboardLayout from "./layouts/DashboardLayout";
 import { apolloClient } from "./providers/ApolloClient";
 
 function App() {
   return (
     <ApolloProvider client={apolloClient}>
-      <RouterProvider router={appRoutes} />
+      <DashboardLayout>
+        <RouterProvider router={appRoutes} />
+      </DashboardLayout>
     </ApolloProvider>
   );
 }
