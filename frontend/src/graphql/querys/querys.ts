@@ -12,3 +12,14 @@ export const getTables = gql`
     }
   }
 `;
+
+export const getWaiters = gql`
+  query GetWaiters {
+    waiters_waiter(order_by: { name: asc }) {
+      id
+      name
+      created_at
+      updated_at
+    }
+  }
+`;
