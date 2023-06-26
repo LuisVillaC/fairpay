@@ -11,6 +11,7 @@ export const useLocalStorage = (
       const parsedItem = JSON.parse(item) || {};
       if (Object.keys(parsedItem).length > 0) setState(parsedItem);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
