@@ -2,20 +2,15 @@
   "root": true,
   "extends": [
     "react-app",
-    // "airbnb-typescript",
-    // "plugin:import/errors",
-    // "plugin:import/warnings",
-    // "plugin:import/typescript",
+    "react-app/jest",
     "eslint:recommended",
     "plugin:prettier/recommended",
-    "plugin:tailwindcss/recommended"
+    "plugin:tailwindcss/recommended",
+    "plugin:@typescript-eslint/recommended"
   ],
   "plugins": ["tailwindcss", "@typescript-eslint"],
-  "rules": { 
-    "no-console": "warn",
-    // "quotes": [2, "single", { "avoidEscape": true, "allowTemplateLiterals": true }]
-    // "quotes": ["error", "single"]
-    // "import-quotes": ["error", "single"]
+  "rules": {
+    "no-console": "warn"
   },
   "env": {
     "es6": true,
