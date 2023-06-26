@@ -16,6 +16,15 @@ const DashboardLayout: React.FC<React.PropsWithChildren> = (props) => {
           />
         </div>
       </header>
+      <div
+        className="h-[1px] w-full"
+        style={{
+          display: "block",
+          height: "9px",
+          background: "#262626",
+          marginTop: "-9px",
+        }}
+      ></div>
 
       <div className="container mx-auto mt-8">{children}</div>
     </>
