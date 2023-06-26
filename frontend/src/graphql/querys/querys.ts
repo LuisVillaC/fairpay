@@ -1,14 +1,12 @@
 import { gql } from "@apollo/client";
 
 export const getTables = gql`
-  query GetUsers {
-    auth_user {
+  query GetTable {
+    tables_table(order_by: { alias: asc }) {
+      alias
       id
-      email
-      first_name
-      is_superuser
-      last_name
-      username
+      status
+      default_client_capacity
     }
   }
 `;
