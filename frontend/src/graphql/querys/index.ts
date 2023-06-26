@@ -1,1 +1,1 @@
-export { getWaiters } from "./querys";
+export * from "./querys";

@@ -1,8 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import { Button } from "src/components/ui/Button";
 import { useWaiter } from "src/context/WaiterContext";
-import { useNavigate } from "react-router-dom";
 
-const WaiterAction = () => {
+const TakeOrder = () => {
   const { waiter } = useWaiter();
   const navigate = useNavigate();
   return (
@@ -31,4 +31,4 @@ const WaiterAction = () => {
   );
 };
 
-export default WaiterAction;
+export default TakeOrder;
