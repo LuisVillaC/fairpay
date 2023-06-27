@@ -18,7 +18,7 @@ const router = createBrowserRouter([
     element: <Table />,
   },
   {
-    path: "/action/tables/:id/take-order",
+    path: "/action/tables/:tableId/take-order",
     element: <TakeOrder />,
   },
 ]);
