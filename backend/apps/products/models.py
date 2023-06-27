@@ -18,3 +18,6 @@ class Product(TimestampedModel, models.Model):
         """
         verbose_name = "Product"
         verbose_name_plural = "Products"
+
+    def __str__(self):
+        return "{} - {}".format(self.id, self.name)
