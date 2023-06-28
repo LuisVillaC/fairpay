@@ -44,3 +44,27 @@ export const getProducts = gql`
     }
   }
 `;
+
+export const getVisitResume = gql`
+  query getVisitResume($table_id: bigint = "") {
+    visits_customervisit(
+      where: {
+        visits_visit: {
+          table_id: { _eq: $table_id }
+          status: { _eq: "started" }
+        }
+      }
+    ) {
+      visits_customervisitproducts {
+        products_product {
+          id
+          price
+          name
+        }
+      }
+      id
+      customer
+      visit_id
+    }
+  }
+`;

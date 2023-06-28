@@ -53,3 +53,22 @@ export const addBulkCustomerVisitProducts = gql`
     }
   }
 `;
+
+export const finishTableVisit = gql`
+  mutation finishTableVisit($table_id: bigint = "", $visit_id: bigint = "") {
+    update_tables_table_by_pk(
+      pk_columns: { id: $table_id }
+      _set: { status: "available" }
+    ) {
+      id
+      status
+    }
+    update_visits_visit_by_pk(
+      pk_columns: { id: $visit_id }
+      _set: { status: "finished" }
+    ) {
+      status
+      id
+    }
+  }
+`;

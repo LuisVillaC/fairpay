@@ -20,8 +20,8 @@ const Table = () => {
           {data &&
             data.tables_table.map((table: Table) => {
               return (
-                <div className="basis-1/12">
-                  <TableCard table={table} key={table.id} />
+                <div className="basis-1/12" key={table.id}>
+                  <TableCard table={table} />
                 </div>
               );
             })}
