@@ -12,7 +12,7 @@ const Home = () => {
 
   const handleSelectWaiter = (selectedWaiter: Waiter) => {
     setWaiter(selectedWaiter);
-    navigate("/action");
+    navigate("/action/tables");
   };
 
   return (

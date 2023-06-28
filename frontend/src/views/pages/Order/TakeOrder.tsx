@@ -17,10 +17,11 @@ import { getProducts, getTableById } from "src/graphql/querys";
 import { useToast } from "src/hooks/useToast";
 
 const TakeOrder = () => {
-  const { waiter } = useWaiter();
   const { toast } = useToast();
-
+  const { waiter } = useWaiter();
+  const navigate = useNavigate();
   const { tableId } = useParams();
+
   const { data: productsData } = useQuery(getProducts);
   const { data: tableData } = useQuery(getTableById, {
     variables: { id: tableId },
@@ -32,9 +33,8 @@ const TakeOrder = () => {
   const [mutateBulkCustomerVisitProducts, { error: customerProductsError }] =
     useMutation(addBulkCustomerVisitProducts);
 
-  const navigate = useNavigate();
-
   const [loading, setLoading] = useState(false);
+  const [itemsCount, setItemsCount] = useState(0);
   const [selectedCustomer, setSelectedCustomer] = useState<number>(1);
   const [usersSelectedProducts, setUsersSelectedProducts] =
     useState<SelectedProducts>({});
@@ -61,6 +61,7 @@ const TakeOrder = () => {
       };
     }
     setUsersSelectedProducts({ ...usersSelectedProducts });
+    setItemsCount(itemsCount + 1);
   };
 
   const handleIncreaseProductQuantity = (
@@ -70,6 +71,7 @@ const TakeOrder = () => {
     const quantity = usersSelectedProducts[customerId][product.id].quantity;
     usersSelectedProducts[customerId][product.id].quantity = quantity + 1;
     setUsersSelectedProducts({ ...usersSelectedProducts });
+    setItemsCount(itemsCount + 1);
   };
 
   const handleDecreaseProductQuantity = (
@@ -87,6 +89,7 @@ const TakeOrder = () => {
       }
     }
     setUsersSelectedProducts({ ...usersSelectedProducts });
+    setItemsCount(itemsCount - 1);
   };
 
   const handleTakeOrder = async () => {
@@ -186,7 +189,7 @@ const TakeOrder = () => {
           <h3 className="mb-4 mt-6 text-left text-base font-bold leading-none tracking-tight md:text-lg xl:text-xl">
             Select products for this customer
           </h3>
-          <ScrollArea className="h-[300px] w-full rounded-md border p-4">
+          <ScrollArea className="h-[350px] w-full rounded-md border p-4">
             <ProductsTable
               products={productsData?.products_product || []}
               handleAddProduct={handleAddProduct}
@@ -200,7 +203,7 @@ const TakeOrder = () => {
             </h3>
             <div>
               <span>Total items:</span>
-              <span>4</span>
+              <span>{itemsCount}</span>
             </div>
           </div>
           <Separator />
