@@ -5,6 +5,7 @@ import { CartTotalPrice } from "src/components/CartTotal";
 import { CustomerSelectedProducts } from "src/components/CustomerSelectedProducts";
 import { OrderCustomerSelector } from "src/components/CustomerSelector";
 import { ProductsTable } from "src/components/ProductsTable";
+import { ReturnButton } from "src/components/ReturnButton";
 import { ScrollArea } from "src/components/ui/ScrollArea";
 import { Separator } from "src/components/ui/Separator";
 import { useWaiter } from "src/context/WaiterContext";
@@ -173,6 +174,9 @@ const TakeOrder = () => {
 
   return (
     <div className="container mx-auto h-full px-0">
+      <div className="absolute ml-8 mt-8">
+        <ReturnButton href="/action/tables" />
+      </div>
       <div className="flex flex-col justify-center md:flex-row">
         <div className="shrink-0 grow px-4 py-8 md:max-w-[66%]">
           <p className="mb-6 text-center font-light text-gray-500 md:text-lg lg:mb-8 lg:text-xl">

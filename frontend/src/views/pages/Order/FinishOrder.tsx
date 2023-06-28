@@ -2,6 +2,7 @@ import { useMutation, useQuery } from "@apollo/client";
 import { Loader2 } from "lucide-react";
 import { useNavigate, useParams } from "react-router-dom";
 import { FinishOrderVisitCard } from "src/components/FinishOrderVisitCard";
+import { ReturnButton } from "src/components/ReturnButton";
 import Loading from "src/components/common/Loading";
 import { Button } from "src/components/ui/Button";
 import { finishTableVisit } from "src/graphql/mutations/mutations";
@@ -37,6 +38,9 @@ const FinishOrder = () => {
 
   return (
     <div className="container mx-auto mt-8">
+      <div>
+        <ReturnButton href="/action/tables" />
+      </div>
       <div className="flex flex-col justify-center">
         <h1 className="mb-4 text-center text-3xl font-extrabold leading-none tracking-tight md:text-4xl xl:text-5xl">
           Finish order
