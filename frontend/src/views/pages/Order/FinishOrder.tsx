@@ -14,6 +14,7 @@ const FinishOrder = () => {
   const { tableId } = useParams();
   const { data, loading: loadingResume } = useQuery(getVisitResume, {
     variables: { table_id: tableId },
+    fetchPolicy: "no-cache",
   });
 
   const [mutateFinishVisit, { error: finishingVisitError, loading }] =
