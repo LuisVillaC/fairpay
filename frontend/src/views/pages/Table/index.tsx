@@ -1,4 +1,5 @@
 import { useQuery } from "@apollo/client";
+import { ReturnButton } from "src/components/ReturnButton";
 import { TableCard } from "src/components/TableCard";
 import Loading from "src/components/common/Loading";
 import { getTables } from "src/graphql/querys";
@@ -8,6 +9,9 @@ const Table = () => {
 
   return (
     <div className="container mx-auto mt-8">
+      <div>
+        <ReturnButton href="/" />
+      </div>
       <div className="flex flex-col justify-center">
         <h1 className="mb-4 text-center text-3xl font-extrabold leading-none tracking-tight md:text-4xl xl:text-5xl">
           Available tables
