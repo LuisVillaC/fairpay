@@ -2,11 +2,30 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Prerequisites
+
+- **_NodeJS_** version: >= 18.x (prod recommended / dev recommended)
+- **_Yarn CLI (Classic)_** (optional) version: >= 1.x
+- **.env file** This file is required to run this project
+
+## Configuration .env file
+
+- HASURA_KEY=your-hasura-key
+- HASURA_URL=https://your-hasura-urll.hasura.app/v1/graphql
+
+## install new libraries
+
+### `yarn workspace frontend add library_name_here`
+
 ## Available Scripts
 
-In the project directory, you can run:
+In the project directory, you can run to install dependencies:
 
-### `yarn start`
+### `yarn install`
+
+Run server in local:
+
+### `yarn dev`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
